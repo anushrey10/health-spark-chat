@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 227 47% 99%;
+    --foreground: 230 15% 15%;
+
+    --card: 227 47% 99%;
+    --card-foreground: 230 15% 15%;
+
+    --popover: 227 47% 99%;
+    --popover-foreground: 230 15% 15%;
+
+    --primary: 151 70% 47%;
+    --primary-foreground: 227 47% 99%;
+
+    --secondary: 260 75% 75%;
+    --secondary-foreground: 227 47% 99%;
+
+    --muted: 230 4% 95%;
+    --muted-foreground: 230 10% 50%;
+
+    --accent: 260 75% 75%;
+    --accent-foreground: 227 47% 99%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 227 47% 99%;
+
+    --border: 230 10% 90%;
+    --input: 230 10% 90%;
+    --ring: 151 70% 47%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 230 25% 10%;
+    --foreground: 227 47% 99%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 227 47% 99%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 227 47% 99%;
+
+    --primary: 151 70% 47%;
+    --primary-foreground: 227 47% 99%;
+
+    --secondary: 260 75% 75%;
+    --secondary-foreground: 227 47% 99%;
+
+    --muted: 230 15% 20%;
+    --muted-foreground: 230 10% 70%;
+
+    --accent: 260 75% 75%;
+    --accent-foreground: 227 47% 99%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 227 47% 99%;
+
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 151 70% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-lg rounded-xl border border-white/20 shadow-lg;
+  }
+  
+  .animate-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+  
+  .gradient-text {
+    @apply bg-supabase-gradient bg-clip-text text-transparent;
+  }
+
+  .supabase-card {
+    @apply rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::after {
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 ease-in-out;
+    content: '';
+    background: radial-gradient(circle at center, rgba(155, 135, 245, 0.4) 0%, rgba(30, 30, 60, 0) 70%);
+    z-index: -1;
+  }
+  
+  .glow-effect:hover::after {
+    @apply opacity-100;
+  }
+
+  .code-block {
+    @apply rounded-lg bg-supabase-darkBlue/95 text-white p-4 font-mono text-sm;
+  }
+}
